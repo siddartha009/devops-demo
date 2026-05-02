@@ -1,38 +1,44 @@
-# ---------- 3.1 Create repository, add file, commit ----------
+# ---------- 3.1 Create repo, add README, commit, push ----------
 
 git init
-echo "Hello DevOps" > file.txt
-git add file.txt
-git commit -m "First commit"
+echo "# My Project" > README.md
+git add README.md
+git commit -m "Initial commit"
 
-
-# ---------- 3.2 Push local repository to GitHub ----------
-
-git remote add origin https://github.com/your-username/repo-name.git
+git remote add origin https://github.com/your-username/repo.git
 git branch -M main
 git push -u origin main
 
 
-# ---------- 3.3 Create branch (MITS) and modify file ----------
+# ---------- 3.2 Create branch MITS, modify, commit, merge ----------
 
 git branch MITS
 git checkout MITS
-echo "Change from MITS branch" >> file.txt
+
+echo "Change from MITS branch" >> README.md
 git add .
 git commit -m "Updated in MITS branch"
-
-
-# ---------- 3.4 Merge branch with main ----------
 
 git checkout main
 git merge MITS
 
 
-# ---------- 3.5 Display commit history ----------
+# ---------- 3.3 View commit history and hash ----------
 
 git log
 
-# ---------- PROGRAM 1: Open Google ----------
+
+# ---------- 3.4 Clone repository ----------
+
+git clone https://github.com/your-username/repo.git
+
+
+# ---------- 3.5 Push changes to remote ----------
+
+echo "Another change" >> README.md
+git add .
+git commit -m "Another update"
+git push# ---------- PROGRAM 1: Open Google ----------
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
