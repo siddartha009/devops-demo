@@ -1,3 +1,49 @@
+# ---------- SETUP ----------
+git config --global user.name "Your Name"
+git config --global user.email "your-email@gmail.com"
+
+
+# ---------- CREATE REPOSITORY ----------
+git init
+
+
+# ---------- FILE OPERATIONS ----------
+git status
+git add file.txt
+git add .
+
+
+# ---------- SAVE CHANGES ----------
+git commit -m "message"
+
+
+# ---------- CONNECT TO GITHUB ----------
+git remote add origin https://github.com/username/repo.git
+git branch -M main
+
+
+# ---------- PUSH TO GITHUB ----------
+git push -u origin main
+git push
+
+
+# ---------- BRANCHING ----------
+git branch MITS
+git checkout MITS
+
+
+# ---------- MERGE ----------
+git checkout main
+git merge MITS
+
+
+# ---------- HISTORY ----------
+git log
+
+
+# ---------- CLONE ----------
+git clone https://github.com/username/repo.git
+
 # ---------- 3.1 Create repo, add README, commit, push ----------
 
 git init
