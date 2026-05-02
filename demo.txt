@@ -38,7 +38,13 @@ git clone https://github.com/your-username/repo.git
 echo "Another change" >> README.md
 git add .
 git commit -m "Another update"
-git push# ---------- PROGRAM 1: Open Google ----------
+git push
+
+python -m ensurepip --upgrade
+pip install selenium
+https://chromedriver.chromium.org
+
+# ---------- PROGRAM 1: Open Google ----------
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
