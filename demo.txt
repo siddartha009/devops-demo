@@ -90,42 +90,36 @@ python -m ensurepip --upgrade
 pip install selenium
 https://chromedriver.chromium.org
 
-# ---------- PROGRAM 1: Open Google ----------
-
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+# ---------- PROGRAM 1 ----------
 driver = webdriver.Edge()
+driver.implicitly_wait(10)
 driver.get("https://www.google.com")
+element = driver.find_element(By.NAME, "q")
+print("Element found:", element)
 time.sleep(5)
-e = driver.find_element(By.NAME, "q")
-print(e.tag_name, e.get_attribute("type"))
 driver.quit()
 
 
-# ---------- PROGRAM 2: Search in Google ----------
-
-
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+# ---------- PROGRAM 2 ----------
 driver = webdriver.Edge()
+driver.implicitly_wait(10)
 driver.get("https://www.google.com")
-search = driver.find_element(By.NAME, "q")
-btn = driver.find_element(By.NAME, "btnK")
-print(search.is_displayed(), btn.is_enabled())
-search.send_keys("Selenium")
+elements = driver.find_elements(By.XPATH, "//*")
+print("Total elements:", len(elements))
+time.sleep(5)
 driver.quit()
 
 
-# ---------- PROGRAM 3: Login Example ----------
-
-
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+# ---------- PROGRAM 3 ----------
 driver = webdriver.Edge()
+driver.implicitly_wait(10)
 driver.get("https://www.facebook.com")
-driver.find_element(By.ID, "email")
-driver.find_element(By.ID, "pass")
-driver.find_element(By.NAME, "login")
-print("Login page elements found")
+driver.find_element(By.ID, "email").send_keys("your_email")
+driver.find_element(By.ID, "pass").send_keys("your_password")
+driver.find_element(By.NAME, "login").click()
+time.sleep(5)
 driver.quit()
